@@ -16,13 +16,14 @@ const User    = require('./model/user');
 const Project = require('./model/project');
 
 //Connecta ao banco
-mongoose.connect('mongodb://localhost/testedb');
+//mongoose.connect('mongodb://localhost/testedb');
 
 // Carrega as Rotas
 const indexRoute    = require('./routes/index-route');
 const userRoute = require('./routes/user-route')
 const projRoute    = require('./routes/project-route')
 
+app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json({
 	limit: '5mb'
 }));
@@ -38,7 +39,7 @@ app.use(function (req, res, next) {
     next();
 });
 
-app.use('/',indexRoute);
+app.use('/api',indexRoute);
 app.use('/users',userRoute);
 app.use('/projects',projRoute);
 
