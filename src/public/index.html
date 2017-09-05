@@ -9,45 +9,28 @@
 	<ul>
 		GET
 		<li>
-			<a href="https://todo-list-prpi.herokuapp.com">https://todo-list-prpi.herokuapp.com/
+			<a href="https://task-list-prpi.herokuapp.com/">https://task-list-prpi.herokuapp.com/
 			</a>
 			<br>
 			Descrição: Página principal index.html con descrição das rotas
 		</li>
 		<br>
 		<li>
-			<a href="https://todo-list-prpi.herokuapp.com/api">https://todo-list-prpi.herokuapp.com/api
+			<a href="https://task-list-prpi.herokuapp.com/api">https://task-list-prpi.herokuapp.com/api
 			</a>
 			<br>Descrição: Nome e versão da API
 		</li>
-		<br>
 		<li>
-			<a href="https://todo-list-prpi.herokuapp.com/api/usuarios">https://todo-list-prpi.herokuapp.com/api/usuarios
+			<a href="https://task-list-prpi.herokuapp.com/projects/títulodatarefa">https://task-list-prpi.herokuapp.com/projects/títulodatarefa
 			</a>
-			<br>
-			Descrição: Retorno de todos os usuários cadastrados
+			<br>Descrição: Retorno do projeto junto com as tarefas (rota protegida por token)
 		</li>
-		<br>
 		<li>
-			<a href="https://todo-list-prpi.herokuapp.com/api/tarefas">https://todo-list-prpi.herokuapp.com/api/tarefas
+			<a href="https://task-list-prpi.herokuapp.com/projects">https://task-list-prpi.herokuapp.com/projects
 			</a>
-			<br>
-			Descrição: Retorno de todos as tarefas cadastradas
+			<br>Descrição: Retorno dos projetos e tarefas (rota protegida por token)
 		</li>
-		<br>
-		<li>
-			<a href="https://todo-list-prpi.herokuapp.com/api/usuarios/:id_usuario">https://todo-list-prpi.herokuapp.com/api/usuarios/:id_usuario
-			</a>
-			<br>
-			Descrição: Retorno de usuário por id
-		</li>
-		<br>
-		<li>
-			<a href="https://todo-list-prpi.herokuapp.com/api/tarefas/:id_tarefa">https://todo-list-prpi.herokuapp.com/api/tarefas/:id_tarefa
-			</a>
-			<br>
-			Descrição: Retorno de tarefa por id
-		</li>
+		
 	</ul>
 	<br>
 	<ul>
@@ -56,61 +39,67 @@
 			<a href="https://task-list-prpi.herokuapp.com/users">https://task-list-prpi.herokuapp.com/users
 			</a>
 			<br>
-			Descrição: Insere usuário na base de dados e envia confirmação por email
-			  ex. {
-				"name" : "tiago de lima Alves",
-					"email": "tiago_lima411@hotmail.com",
-					"password": "123456",
-					"roles": ["user"]
+			Descrição: Insere usuário na base de dados e envia confirmação por email<br>
+			  ex.: {<br>
+				"name" : "tiago de lima Alves",<br>
+					"email": "tiago_lima411@hotmail.com",<br>
+					"password": "123456",<br>
+					"roles": ["user"]<br>
 				}
 		</li>
 		<br>
 		<li>
-			<a href="http://localhost:3000/users/authenticate">https://todo-list-prpi.herokuapp.com/api/tarefas
+			<a href="https://task-list-prpi.herokuapp.com/users/authenticate">https://task-list-prpi.herokuapp.com/users/authenticate
 			</a>
 			<br>
-			Descrição: Insere tarefas na base de dados
+			Descrição: Insere email e senha para ter o retorno do token
+			ex.: {<br>
+				"email": "teste@teste.gmail.com",<br>
+				"password": "123456"<br>
+			}<br>
+		</li>
+		<li>
+			<a href="https://task-list-prpi.herokuapp.com/users/refresh-token">https://task-list-prpi.herokuapp.com/users/refresh-token
+			</a>
+			<br>
+			Descrição: Se o token ainda estiver válido ele renova por mais un dia sem que o usuário necessite logar novamente
+			ex.: {<br>
+				"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU5YWVmZDQ3NDc5ZTdiMDAxMTgxNmNiMyIsImVtYWlsIjoidGVzdF90ZXN0QGhvdG1haWwuY29tIiwibmFtZSI6InVzZXIgdGVzdCIsInJvbGVzIjpbInVzZXIiXSwiaWF0IjoxNTA0NjQwODA1LCJleHAiOjE1MDQ3MjcyMDV9.a8LMV2tSaeqmHwcMl_qbN1mFyr6oLVXcG-rSLaGPIlY",<br>
+			}<br>
+		</li>
+		<li>
+			<a href="https://task-list-prpi.herokuapp.com/projects">https://task-list-prpi.herokuapp.com/projects
+			</a>
+			<br>
+			Descrição: cadastra um projeto e uma tarefa ou um array de tarefas (rota protegida por token)
+			ex.: {<br>
+				{<br>
+					"titleProj": "Estudos",<br>
+					"tasks":[{<br>
+						"description": "Estudar algoritmo",<br>
+						"date":"2017-09-09",<br>
+						"priority": "baixa"<br>
+					},{<br>
+						"description": "Estudar matematica",<br>
+						"date":"2017-10-09",<br>
+						"priority": "media"<br>
+					}]<br>
+				}<br>
+			}<br>
 		</li>
 	</ul>
 	<br>
 	<ul>
 		PUT
-		<li>
-			<a href="https://todo-list-prpi.herokuapp.com/api/usuarios/:id_usuario">https://todo-list-prpi.herokuapp.com/api/usuarios/:id_usuario
-			</a>
-			<br>
-			Descrição: Atualiza usuário na base de dados
-		</li>
-		<br>
-		<li>
-			<a href="https://todo-list-prpi.herokuapp.com/api/tarefas/:id_tarefa">https://todo-list-prpi.herokuapp.com/api/tarefas/:id_tarefa
-			</a>
-			<br>
-			Descrição: Atualiza tarefa na base de dados
-		</li>
-	</ul>
-	<br>
+		
 	<ul>
 		DELETE
-		<li>
-			<a href="https://todo-list-prpi.herokuapp.com/api/usuarios/:id_usuario">https://todo-list-prpi.herokuapp.com/api/usuarios/:id_usuario
-			</a>
-			<br>
-			Descrição: Deleta usuário na base de dados
-		</li>
-		<br>
-		<li>
-			<a href="https://todo-list-prpi.herokuapp.com/api/tarefas/:id_tarefa">https://todo-list-prpi.herokuapp.com/api/tarefas/:id_tarefa
-			</a>
-			<br>
-			Descrição: Deleta tarefa na base de dados
-		</li>
+		
 	</ul>
-	<br>
 	<br>
 	<p>
 		Projeto da api no GitHub	
 	</p>
-	<a href="https://github.com/TiagoLima411/todo-list-api">https://github.com/TiagoLima411/todo-list-api</a>
+	<a href=""></a>
 	</body>
 </html>
