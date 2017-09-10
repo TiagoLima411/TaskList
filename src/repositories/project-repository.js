@@ -30,8 +30,7 @@ exports.update = async(id, data) => {
 	await Project
 				.findByIdAndUpdate(id,{
 					$set:{
-						titleProj: data.titleProj,
-						tasks:data.tasks
+						titleProj: data.titleProj
 					}
 	});
 }

@@ -40,10 +40,8 @@ exports.delete = async(req, res, next) => {
 
 exports.create = async(req, res, next) => {
 	try{
-		
 		await repository.create({
-			titleProj: req.body.titleProj,
-			tasks: req.body.tasks
+			titleProj: req.body.titleProj
 		});
 
 		res.status(200).send({
