@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Task = mongoose.model('Task');
 
 exports.get = async(data) => {
-	var res = await Task.find({}, 'description date priority')
+	var res = await Task.find()
 	return res;
 }
 

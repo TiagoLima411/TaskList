@@ -23,7 +23,7 @@ const schema = new Schema({
         default:'nulo'
         },
     done: {
-        type:boolean,
+        type:Boolean,
         required: true,
         default: false
     }
