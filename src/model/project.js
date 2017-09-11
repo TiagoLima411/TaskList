@@ -7,7 +7,8 @@ const schema = new Schema({
 	titleProj: {
 		type: String,
 		required: true
-	}
+	},
+	
 });
  
 module.exports = mongoose.model('Project', schema);
