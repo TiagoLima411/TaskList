@@ -32,7 +32,8 @@ exports.create = async(req, res, next) => {
 		await repository.create({
 			description: req.body.description,
 			date: req.body.date,
-			priority: req.body.priority
+			priority: req.body.priority,
+			done: req.body.done
 		});
 		res.status(200).send({
 			message: 'Tarefa cadastrada com sucesso!'
