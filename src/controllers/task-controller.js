@@ -1,5 +1,6 @@
-const repository = require('../repositories/task-repository');
-const authService = require('../services/auth-service');
+const repository = require('../repositories/task-repository')
+const repositoryProj = require('../repositories/project-repository') 
+const authService = require('../services/auth-service')
 
 exports.get = async(req, res, next) => {
 	try{
@@ -30,6 +31,7 @@ exports.delete = async(req, res, next) => {
 exports.create = async(req, res, next) => {
 	try{
 		await repository.create({
+			project: req.body.project,
 			description: req.body.description,
 			date: req.body.date,
 			priority: req.body.priority,
@@ -39,7 +41,8 @@ exports.create = async(req, res, next) => {
 			message: 'Tarefa cadastrada com sucesso!'
 		});	
 	}catch (e) {
-		res.status(500).send(e,{
+		console.log(e)
+		res.status(500).send({
 			message: 'falha ao processar sua requisição'
 		});
 	}

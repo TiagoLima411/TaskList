@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Task = mongoose.model('Task');
 
 exports.get = async(data) => {
-	var res = await Task.find()
+	var res = await Task.find({}, 'project description date priority done').populate('project','titleProj')
 	return res;
 }
 

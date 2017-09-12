@@ -6,8 +6,9 @@ const Schema   = mongoose.Schema;
 const schema = new Schema({
 	titleProj: {
 		type: String,
-		required: true
-	},
+		required: true,
+		default: 'nulo'
+	}
 	
 });
  
