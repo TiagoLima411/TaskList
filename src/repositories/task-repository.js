@@ -11,9 +11,9 @@ exports.create = async(data) => {
 	await task.save();
 }
 
-exports.delete = async(description) => {
+exports.delete = async(id) => {
 	await Task
-		.findOneAndRemove(description);
+		.findOneAndRemove(id);
 }
 
 exports.update = async(id, data) => {

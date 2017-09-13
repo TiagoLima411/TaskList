@@ -15,7 +15,7 @@ exports.get = async(req, res, next) => {
 
 exports.delete = async(req, res, next) => {
 	try{
-		await repository.delete(req.body.description);	
+		await repository.delete(req.params.id);	
 		res.status(200).send({
 			message: 'Tarefa removida com sucesso'
 		})
