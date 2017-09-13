@@ -16,9 +16,9 @@ exports.getByTitle = async(title) => {
 	return res;	
 }
 
-exports.delete = async(titleProj) => {
+exports.delete = async(id) => {
 	await Project
-		.findOneAndRemove(titleProj);
+		.findOneAndRemove(id);
 }
 
 exports.create = async(data) => {

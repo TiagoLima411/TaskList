@@ -5,100 +5,35 @@
 		<title>My app!</title>
 	</head>
 	<body>
-	<h2>Documentação de rotas</h2>
-	<ul>
-		GET
-		<li>
-			<a href="https://task-list-prpi.herokuapp.com/">https://task-list-prpi.herokuapp.com/
-			</a>
-			<br>
-			Descrição: Página principal index.html con descrição das rotas
-		</li>
+		<h2>Documentação de rotas</h2>
+		<ul>
+			<h3>GET</h3><strong></strong>
+			<li><strong>/</strong> <p>Index com descrição das rotas</p></li>
+			<li><strong>/api</strong> <p>Retorna Nome e versão da API</p></li>
+			<li><strong>/projects</strong> <p>Retorna projetos cadastrados</p></li>
+			<li><strong>/projects/titulo do projeto</strong><p>Retorna projeto cadastrado passando título pela url</p></li>
+			<li><strong>/tasks</strong> <p>Retorna Tarefas cadastradas</p></li>
+		</ul>
 		<br>
-		<li>
-			<a href="https://task-list-prpi.herokuapp.com/api">https://task-list-prpi.herokuapp.com/api
-			</a>
-			<br>Descrição: Nome e versão da API
-		</li>
-		<li>
-			<a href="https://task-list-prpi.herokuapp.com/projects/títulodatarefa">https://task-list-prpi.herokuapp.com/projects/títulodatarefa
-			</a>
-			<br>Descrição: Retorno do projeto junto com as tarefas (rota protegida por token)
-		</li>
-		<li>
-			<a href="https://task-list-prpi.herokuapp.com/projects">https://task-list-prpi.herokuapp.com/projects
-			</a>
-			<br>Descrição: Retorno dos projetos e tarefas (rota protegida por token)
-		</li>
-		
-	</ul>
-	<br>
-	<ul>
-		POST
-		<li>
-			<a href="https://task-list-prpi.herokuapp.com/users">https://task-list-prpi.herokuapp.com/users
-			</a>
-			<br>
-			Descrição: Insere usuário na base de dados e envia confirmação por email<br>
-			  ex.: {<br>
-				"name" : "tiago de lima Alves",<br>
-					"email": "tiago_lima411@hotmail.com",<br>
-					"password": "123456",<br>
-					"roles": ["user"]<br>
-				}
-		</li>
+		<ul>
+			<h3>PUT</h3><strong></strong>
+			<li><strong>/projects/id</strong> <p>Atualiza projeto passando id pela url e o resto das informações pelo body</p></li>
+			<li><strong>/tasks/id</strong> <p>Atualiza tarefa passando id da tarefa pela url</p></li>
+		</ul>
 		<br>
-		<li>
-			<a href="https://task-list-prpi.herokuapp.com/users/authenticate">https://task-list-prpi.herokuapp.com/users/authenticate
-			</a>
-			<br>
-			Descrição: Insere email e senha para ter o retorno do token
-			ex.: {<br>
-				"email": "teste@teste.gmail.com",<br>
-				"password": "123456"<br>
-			}<br>
-		</li>
-		<li>
-			<a href="https://task-list-prpi.herokuapp.com/users/refresh-token">https://task-list-prpi.herokuapp.com/users/refresh-token
-			</a>
-			<br>
-			Descrição: Se o token ainda estiver válido ele renova por mais un dia sem que o usuário necessite logar novamente
-			ex.: {<br>
-				"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU5YWVmZDQ3NDc5ZTdiMDAxMTgxNmNiMyIsImVtYWlsIjoidGVzdF90ZXN0QGhvdG1haWwuY29tIiwibmFtZSI6InVzZXIgdGVzdCIsInJvbGVzIjpbInVzZXIiXSwiaWF0IjoxNTA0NjQwODA1LCJleHAiOjE1MDQ3MjcyMDV9.a8LMV2tSaeqmHwcMl_qbN1mFyr6oLVXcG-rSLaGPIlY",<br>
-			}<br>
-		</li>
-		<li>
-			<a href="https://task-list-prpi.herokuapp.com/projects">https://task-list-prpi.herokuapp.com/projects
-			</a>
-			<br>
-			Descrição: cadastra um projeto e uma tarefa ou um array de tarefas (rota protegida por token)
-			ex.: <br>
-				{<br>
-					"titleProj": "Estudos",<br>
-					"tasks":[{<br>
-						"description": "Estudar algoritmo",<br>
-						"date":"2017-09-09",<br>
-						"priority": "baixa"<br>
-					},{<br>
-						"description": "Estudar matematica",<br>
-						"date":"2017-10-09",<br>
-						"priority": "media"<br>
-					}]<br>
-				}<br>
-		</li>
-	</ul>
-	<br>
-	<ul>
-		PUT
-		
-	<ul>
-		DELETE
-	<ul>	
-	</ul>
-	<br>
-	<p>
-		Projeto da api no GitHub	
-	</p>
-	<a href=""></a>
+		<ul>
+			<h3>POST</h3><strong></strong>
+			<li><strong>/users</strong> <p>Cadastra Usuario e envia notificação por email</p></li>
+			<li><strong>/users/authenticate</strong> <p>Consulta usuario no banco e retorna um token caso usuario exista</p></li>
+			<li><strong>/users/refresh-token</strong> <p>Verifica se tem algum token válido no body ou header ou na url caso tenha renova o token por mais um dia sem que o usuário precise logar novamente</p></li>
+			<li><strong>/projects</strong> <p>Cadastra projeto</p></li>
+			<li><strong>/tasks</strong> <p>Cadastra tarefa passando ou não o id do projeto</p></li>
+		</ul>
+		<br>
+		<ul>
+			<h3>DELETE</h3><strong></strong>
+			<li><strong>/projects/id</strong> <p>Exclui a tarefa passando id da mesma na url</p></li>
+			<li><strong>/tasks/id</strong> <p>Exclui a tarefa passando id da mesma na url</p></li>
+		</ul> 
 	</body>
 </html>

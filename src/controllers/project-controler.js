@@ -25,7 +25,7 @@ exports.getByTitle = async(req,res, next) =>{
 
 exports.delete = async(req, res, next) => {
 	try{
-		await repository.delete(req.body.titleProj);	
+		await repository.delete(req.params.id);	
 		res.status(200).send({
 			message: 'Projeto removido com sucesso'
 		})
