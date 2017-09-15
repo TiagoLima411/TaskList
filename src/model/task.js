@@ -19,14 +19,18 @@ const schema = new Schema({
     priority:{
         type:String,
         reqired:true,
-        enum:['nulo','baixa','media','alta'],
-        default:'nulo'
+        enum:['Nula','Baixa','Média','Alta'],
+        default:'Nula'
         },
     done: {
         type:Boolean,
         required: true,
         default: false
-    }
+    },
+    createdAt:{
+        type: Date,
+        default: new Date
+        }
 
 });
 

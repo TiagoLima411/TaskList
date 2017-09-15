@@ -13,6 +13,18 @@ exports.get = async(req, res, next) => {
 	}
 }
 
+exports.getById = async(req, res, next) => {
+	try{
+		var data = await repository.getById(req.params.id)
+		res.status(200).send(data);
+	}catch(e){
+		console.log(e)
+		res.status(500).send({
+			message:'Falha na requisição'
+		})
+	}
+}
+
 exports.delete = async(req, res, next) => {
 	try{
 		await repository.delete(req.params.id);	

@@ -121,3 +121,23 @@ exports.refreshToken = async(req, res, next) => {
 	}
 	
 }
+
+exports.getNameAndEmail = async(req, res, next) => {
+	try{
+		const user = await repository.getNameAndEmail({
+			email: req.body.email,
+			password: md5(req.body.password + global.SALT_KEY)
+		});
+		if(!user){
+			res.status(401).send({
+				message: 'Usuário não encontrado verifique e-mail ou senha'
+			})
+		}
+		res.status(200).send(user)
+	}catch(e){
+		console.log(e)
+		res.status(500).send({
+			message: 'Usuário não encontrado ou Falha na requisição'
+		})
+	}
+}

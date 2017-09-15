@@ -17,12 +17,9 @@ function normalizePort(val) {
 
 	if (isNaN(port)) 
 		return val;
-	
 
 	if(port >= 0) 
 		return port;
-	
-	
 
 	return false;
 }

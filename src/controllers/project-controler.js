@@ -12,6 +12,17 @@ exports.get = async(req, res, next) => {
 	}
 }
 
+exports.getById = async(req, res, next) => {
+	try{
+		var data = await repository.getById(req.params.id);
+		res.status(200).send(data);
+	}catch (e) {
+		res.status(500).send({
+			message: 'falha ao processar sua requisição'
+		});
+	}
+}
+
 exports.getByTitle = async(req,res, next) =>{
 	try{
 		const data = await repository.getByTitle(req.params.titleProj);

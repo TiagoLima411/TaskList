@@ -15,7 +15,10 @@ exports.authenticate = async(data) => {
 	return res;
 }
 
-exports.getById = async(id) => {
-	const res = await User.findById(id);
+exports.getNameAndEmail = async(data) => {
+	const res = await User.findOne({
+		email: data.email,
+		password: data.password
+	}, 'name email');
 	return res;
 }

@@ -8,6 +8,12 @@ exports.get = async() => {
 	return res;
 }
 
+exports.getById = async(id) => {
+	const res = await Project
+		.findById(id);
+	return res;
+}
+
 exports.getByTitle = async(title) => {
 	const res = Project
 		.find({
@@ -18,7 +24,7 @@ exports.getByTitle = async(title) => {
 
 exports.delete = async(id) => {
 	await Project
-		.findOneAndRemove(id);
+		.findByIdAndRemove(id);
 }
 
 exports.create = async(data) => {

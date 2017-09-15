@@ -8,5 +8,6 @@ const authService = require('../services/auth-service');
 router.post('/',controller.create);
 router.post('/authenticate',controller.authenticate);
 router.post('/refresh-token',authService.authorize ,controller.refreshToken);
+router.post('/login',controller.getNameAndEmail);
 
 module.exports = router;
