@@ -2,7 +2,6 @@
 const mongoose = require('mongoose');
 const Project  = mongoose.model('Project');
 
-
 exports.get = async() => {
 	const res = await Project.find({});
 	return res;

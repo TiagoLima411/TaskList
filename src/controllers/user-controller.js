@@ -36,6 +36,7 @@ exports.create = async(req, res, next) => {
 			message: 'Usuário cadastrado com sucesso!'
 		});	
 	}catch (e) {
+		console.log(e)
 		res.status(500).send({
 			message: 'falha ao processar sua requisição'
 		});

@@ -37,7 +37,6 @@ exports.delete = async(req, res, next) => {
 			message: 'falha ao processar sua requisição'
 		});	
 	}
-	
 }
 
 exports.create = async(req, res, next) => {
@@ -58,7 +57,6 @@ exports.create = async(req, res, next) => {
 			message: 'falha ao processar sua requisição'
 		});
 	}
-	
 }
 
 exports.put = async(req, res, next) => {
